@@ -2,197 +2,680 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EduConnect | Portal Escolar</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DVF Portal Escolar</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <aside class="sidebar" id="sidebar">
-    <div class="brand">
-      <div class="brand-icon">E</div>
-      <div><strong>EduConnect</strong><small>Portal Escolar</small></div>
+
+<div class="app-container">
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">DVF</div>
+            <div>
+                <h4>DVF Portal</h4>
+                <small>Portal Escolar</small>
+            </div>
+        </div>
+
+        <div class="profile-sidebar">
+            <div class="avatar">YV</div>
+            <div>
+                <strong>Yan Victor</strong>
+                <small>Aluno • 3º Ano</small>
+                <span class="online-status">● Online</span>
+            </div>
+        </div>
+
+        <nav class="menu">
+
+            <p class="menu-title">MENU PRINCIPAL</p>
+
+            <a href="#" class="menu-link active" data-page="inicio">
+                <i class="bi bi-grid"></i> Início
+            </a>
+
+            <a href="#" class="menu-link" data-page="cursos">
+                <i class="bi bi-mortarboard"></i> Meus cursos
+            </a>
+
+            <a href="#" class="menu-link" data-page="atividades">
+                <i class="bi bi-journal-text"></i> Atividades
+                <span class="menu-badge">3</span>
+            </a>
+
+            <a href="#" class="menu-link" data-page="materiais">
+                <i class="bi bi-folder2-open"></i> Material didático
+            </a>
+
+            <a href="#" class="menu-link" data-page="biblioteca">
+                <i class="bi bi-book"></i> Biblioteca
+            </a>
+
+            <p class="menu-title">VIDA ESCOLAR</p>
+
+            <a href="#" class="menu-link" data-page="notas">
+                <i class="bi bi-bar-chart"></i> Boletim e notas
+            </a>
+
+            <a href="#" class="menu-link" data-page="horarios">
+                <i class="bi bi-clock"></i> Horários
+            </a>
+
+            <a href="#" class="menu-link" data-page="eventos">
+                <i class="bi bi-calendar-event"></i> Eventos escolares
+            </a>
+
+            <a href="#" class="menu-link" data-page="professores">
+                <i class="bi bi-chat-dots"></i> Professores
+            </a>
+
+            <p class="menu-title">SISTEMA</p>
+
+            <a href="#" class="menu-link" data-page="notificacoes">
+                <i class="bi bi-bell"></i> Notificações
+            </a>
+
+            <a href="#" class="menu-link" data-page="lixeira">
+                <i class="bi bi-trash"></i> Lixeira
+            </a>
+
+            <a href="#" class="menu-link" data-page="configuracoes">
+                <i class="bi bi-gear"></i> Configurações
+            </a>
+
+        </nav>
+
+        <div class="sidebar-footer">
+            <small>Centro Educa Mais</small>
+            <strong>Domingos Vieira Filho</strong>
+            <small>© 2026 DVF Portal</small>
+        </div>
+
+    </aside>
+
+    <!-- ÁREA PRINCIPAL -->
+    <main class="main-content">
+
+        <!-- CABEÇALHO -->
+        <header class="topbar">
+
+            <button class="menu-toggle" id="menuToggle">
+                <i class="bi bi-list"></i>
+            </button>
+
+            <div class="search-box">
+                <i class="bi bi-search"></i>
+                <input type="text" id="globalSearch" placeholder="Pesquisar no portal...">
+            </div>
+
+            <div class="topbar-actions">
+
+                <button class="icon-button" data-goto="notificacoes" title="Notificações">
+                    <i class="bi bi-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="top-profile">
+                    <div class="avatar small-avatar">YV</div>
+                    <div>
+                        <strong>Yan Victor</strong>
+                        <small>Estudante</small>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+
+        <!-- CONTEÚDO DINÂMICO -->
+        <div class="page-content">
+
+            <!-- INÍCIO -->
+            <section class="page active" id="inicio">
+
+                <div class="welcome-banner">
+                    <div>
+                        <span class="welcome-label">PORTAL DO ESTUDANTE</span>
+                        <h1>Olá, Yan Victor! 👋</h1>
+                        <p>Seja bem-vindo ao DVF Portal Escolar.</p>
+                        <p>Acompanhe seus cursos, atividades e sua vida acadêmica.</p>
+                    </div>
+                    <div class="welcome-decoration">
+                        <i class="bi bi-mortarboard-fill"></i>
+                    </div>
+                </div>
+
+                <div class="section-heading">
+                    <div>
+                        <h3>Visão geral</h3>
+                        <p>Acompanhe seu desempenho escolar.</p>
+                    </div>
+                    <span class="date-label" id="currentDate"></span>
+                </div>
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <div class="stat-icon purple"><i class="bi bi-book"></i></div>
+                        <div>
+                            <span>Cursos matriculados</span>
+                            <h2 id="totalCourses">3</h2>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon blue"><i class="bi bi-list-check"></i></div>
+                        <div>
+                            <span>Atividades pendentes</span>
+                            <h2 id="pendingTasks">3</h2>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon green"><i class="bi bi-award"></i></div>
+                        <div>
+                            <span>Certificados liberados</span>
+                            <h2 id="certificatesCount">0</h2>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon orange"><i class="bi bi-graph-up"></i></div>
+                        <div>
+                            <span>Média geral</span>
+                            <h2 id="averageGrade">8,5</h2>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="content-grid">
+
+                    <div class="content-card">
+                        <div class="card-heading">
+                            <div>
+                                <h4>Meus cursos</h4>
+                                <p>Continue de onde você parou.</p>
+                            </div>
+                            <button class="text-button" data-goto="cursos">Ver todos</button>
+                        </div>
+                        <div id="dashboardCourses"></div>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="card-heading">
+                            <div>
+                                <h4>Últimas notificações</h4>
+                                <p>Fique por dentro das novidades.</p>
+                            </div>
+                            <button class="text-button" data-goto="notificacoes">Ver todas</button>
+                        </div>
+                        <div id="dashboardNotifications"></div>
+                    </div>
+
+                </div>
+
+                <div class="content-grid lower-grid">
+
+                    <div class="content-card">
+                        <div class="card-heading">
+                            <div>
+                                <h4>Acesso rápido</h4>
+                                <p>Suas ferramentas principais.</p>
+                            </div>
+                        </div>
+
+                        <div class="quick-access">
+                            <button data-goto="notas">
+                                <i class="bi bi-clipboard-data"></i>
+                                <span>Boletim</span>
+                            </button>
+                            <button data-goto="materiais">
+                                <i class="bi bi-file-earmark-text"></i>
+                                <span>Materiais</span>
+                            </button>
+                            <button data-goto="horarios">
+                                <i class="bi bi-clock"></i>
+                                <span>Horários</span>
+                            </button>
+                            <button data-goto="biblioteca">
+                                <i class="bi bi-book-half"></i>
+                                <span>Biblioteca</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="card-heading">
+                            <div>
+                                <h4>Próximos eventos</h4>
+                                <p>Agenda escolar.</p>
+                            </div>
+                            <button class="text-button" data-goto="eventos">Calendário</button>
+                        </div>
+                        <div id="dashboardEvents"></div>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- CURSOS -->
+            <section class="page" id="cursos">
+
+                <div class="page-header">
+                    <div>
+                        <span class="eyebrow">FORMAÇÃO PROFISSIONAL</span>
+                        <h2>Meus cursos</h2>
+                        <p>Conheça os cursos disponíveis e acompanhe seu aprendizado.</p>
+                    </div>
+                </div>
+
+                <div class="course-summary">
+                    <div>
+                        <span>Cursos em andamento</span>
+                        <strong id="ongoingCourses">3</strong>
+                    </div>
+                    <div>
+                        <span>Cursos concluídos</span>
+                        <strong id="completedCourses">0</strong>
+                    </div>
+                    <div>
+                        <span>Certificados disponíveis</span>
+                        <strong id="courseCertificates">0</strong>
+                    </div>
+                </div>
+
+                <h4 class="subheading">Cursos disponíveis</h4>
+
+                <div class="course-grid" id="courseGrid"></div>
+
+            </section>
+
+            <!-- ATIVIDADES -->
+            <section class="page" id="atividades">
+
+                <div class="page-header">
+                    <div>
+                        <span class="eyebrow">ACOMPANHAMENTO ESCOLAR</span>
+                        <h2>Atividades e trabalhos</h2>
+                        <p>Confira as tarefas enviadas pelos professores.</p>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-heading">
+                        <h4>Lista de atividades</h4>
+                        <span class="status-pill">Área do aluno</span>
+                    </div>
+                    <div id="activityList"></div>
+                </div>
+
+            </section>
+
+            <!-- MATERIAIS -->
+            <section class="page" id="materiais">
+
+                <div class="page-header">
+                    <div>
+                        <span class="eyebrow">CONTEÚDO ACADÊMICO</span>
+                        <h2>Material didático</h2>
+                        <p>Organize e acesse seus arquivos escolares.</p>
+                    </div>
+                </div>
+
+                <div class="toolbar">
+                    <select id="materialFilter" class="form-select">
+                        <option value="todos">Todos os materiais</option>
+                        <option value="pdf">PDF</option>
+                        <option value="video">Videoaulas</option>
+                        <option value="slide">Slides</option>
+                    </select>
+
+                    <label class="upload-button">
+                        <i class="bi bi-upload"></i> Adicionar arquivo
+                        <input type="file" id="materialUpload" hidden multiple>
+                    </label>
+                </div>
+
+                <div class="content-card">
+                    <div id="materialList"></div>
+                </div>
+
+            </section>
+
+            <!-- BIBLIOTECA -->
+            <section class="page" id="biblioteca">
+
+                <div class="page-header">
+                    <div>
+                        <span class="eyebrow">CONHECIMENTO</span>
+                        <h2>Biblioteca digital</h2>
+                        <p>Explore conteúdos para complementar seus estudos.</p>
+                    </div>
+                </div>
+
+                <div class="library-grid" id="libraryGrid"></div>
+
+            </section>
+
+            <!-- NOTAS -->
+            <section class="page" id="notas">
+
+                <div class="page-header">
+                    <div>
+                        <span class="eyebrow">DESEMPENHO ACADÊMICO</span>
+                        <h2>Boletim escolar</h2>
+                        <p>Consulte suas notas e seu desempenho.</p>
+                    </div>
+                    <button class="primary-button" onclick="window.print()">
+                        <i class="bi bi-printer"></i> Imprimir boletim
+                    </button>
+                </div>
+
+                <div class="grade-overview">
+                    <div>
+                        <span>Aluno</span>
+                        <strong>Yan Victor</strong>
+                    </div>
+                    <div>
+                        <span>Série</span>
+                        <strong>3º Ano</strong>
+                    </div>
+                    <div>
+                        <span>Turma</span>
+                        <strong>301 INF</strong>
+                    </div>
+                    <div>
+                        <span>Média geral</span>
+                        <strong id="reportAverage">8,5</strong>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-heading">
+                        <h4>Notas por disciplina</h4>
+                        <span class="status-pill">Ano letivo 2026</span>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table grade-table">
+                            <thead>
+                                <tr>
+                                    <th>Disciplina</th>
+                                    <th>1º Bimestre</th>
+                                    <th>2º Bimestre</th>
+                                    <th>3º Bimestre</th>
+                                    <th>4º Bimestre</th>
+                                    <th>Média</th>
+                                </tr>
+                            </thead>
+                            <tbody id="gradeTable"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- HORÁRIOS -->
+            <section class="page" id="horarios">
+
+                <div class="page-header">
+                    <div>
+                        <span class="eyebrow">ORGANIZAÇÃO</span>
+                        <h2>Horários escolares</h2>
+                        <p>Consulte sua programação semanal de aulas.</p>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-heading">
+                        <h4>Grade semanal</h4>
+                        <span class="status-pill">301 INF</span>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table schedule-table">
+                            <thead>
+                                <tr>
+                                    <th>Horário</th>
+                                    <th>Segunda</th>
+                                    <th>Terça</th>
+                                    <th>Quarta</th>
+                                    <th>Quinta</th>
+                                    <th>Sexta</th>
+                                </tr>
+                            </thead>
+                            <tbody id="scheduleTable"></tbody>
+                        </table>
+                    </div>
+                    <p class="info-note">Os horários exibidos são demonstrativos e podem ser atualizados pela escola.</p>
+                </div>
+
+            </section>
+
+            <!-- EVENTOS -->
+            <section class="page" id="eventos">
+
+                <div class="page-header">
+                    <div>
+                        <span class="eyebrow">AGENDA ESCOLAR</span>
+                        <h2>Eventos e calendário</h2>
+                        <p>Fique atento às datas importantes da escola.</p>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-heading">
+                        <h4>Próximos eventos</h4>
+                    </div>
+                    <div id="eventList"></div>
+                </div>
+
+            </section>
+
+            <!-- PROFESSORES -->
+            <section class="page" id="professores">
+
+                <div class="page-header">
+                    <div>
+                        <span class="eyebrow">COMUNICAÇÃO</span>
+                        <h2>Professores</h2>
+                        <p>Consulte os contatos e envie mensagens.</p>
+                    </div>
+                </div>
+
+                <div class="communication-grid">
+
+                    <div class="content-card">
+                        <h4>Equipe pedagógica</h4>
+                        <div id="teacherList"></div>
+                    </div>
+
+                    <div class="content-card">
+                        <h4>Enviar mensagem</h4>
+
+                        <form id="messageForm">
+                            <label class="form-label">Professor</label>
+                            <select id="teacherSelect" class="form-select mb-3" required>
+                                <option value="">Selecione um professor</option>
+                            </select>
+
+                            <label class="form-label">Assunto</label>
+                            <input type="text" id="messageSubject" class="form-control mb-3" placeholder="Assunto da mensagem" required>
+
+                            <label class="form-label">Mensagem</label>
+                            <textarea id="messageText" class="form-control mb-3" rows="5" placeholder="Escreva sua mensagem..." required></textarea>
+
+                            <button type="submit" class="primary-button">
+                                <i class="bi bi-send"></i> Enviar mensagem
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+
+                <div class="content-card mt-4">
+                    <h4>Mensagens enviadas</h4>
+                    <div id="sentMessages"></div>
+                </div>
+
+            </section>
+
+            <!-- NOTIFICAÇÕES -->
+            <section class="page" id="notificacoes">
+
+                <div class="page-header">
+                    <div>
+                        <span class="eyebrow">CENTRAL DE AVISOS</span>
+                        <h2>Notificações</h2>
+                        <p>Acompanhe avisos, tarefas e comunicados.</p>
+                    </div>
+                    <button class="secondary-button" id="markAllRead">Marcar todas como lidas</button>
+                </div>
+
+                <div class="content-card">
+                    <div id="notificationList"></div>
+                </div>
+
+            </section>
+
+            <!-- LIXEIRA -->
+            <section class="page" id="lixeira">
+
+                <div class="page-header">
+                    <div>
+                        <span class="eyebrow">GERENCIAMENTO DE ARQUIVOS</span>
+                        <h2>Lixeira</h2>
+                        <p>Arquivos excluídos ficam armazenados aqui.</p>
+                    </div>
+                    <button class="danger-button" id="emptyTrash">
+                        <i class="bi bi-trash"></i> Esvaziar lixeira
+                    </button>
+                </div>
+
+                <div class="content-card">
+                    <div id="trashList"></div>
+                </div>
+
+            </section>
+
+            <!-- CONFIGURAÇÕES -->
+            <section class="page" id="configuracoes">
+
+                <div class="page-header">
+                    <div>
+                        <span class="eyebrow">PERSONALIZAÇÃO</span>
+                        <h2>Configurações</h2>
+                        <p>Gerencie suas preferências no portal.</p>
+                    </div>
+                </div>
+
+                <div class="settings-grid">
+
+                    <div class="content-card">
+                        <h4>Perfil do estudante</h4>
+
+                        <div class="settings-profile">
+                            <div class="avatar large-avatar">YV</div>
+                            <div>
+                                <h5>Yan Victor</h5>
+                                <p>Aluno do 3º Ano • 301 INF</p>
+                            </div>
+                        </div>
+
+                        <label class="form-label">Nome de exibição</label>
+                        <input type="text" class="form-control mb-3" value="Yan Victor" id="studentName">
+
+                        <label class="form-label">Turma</label>
+                        <input type="text" class="form-control mb-3" value="301 INF" disabled>
+
+                        <button class="primary-button" id="saveProfile">Salvar alterações</button>
+                    </div>
+
+                    <div class="content-card">
+                        <h4>Aparência</h4>
+                        <p>Personalize a aparência do seu portal.</p>
+
+                        <div class="setting-option">
+                            <div>
+                                <strong>Modo escuro</strong>
+                                <small>Ativar tema escuro.</small>
+                            </div>
+                            <input type="checkbox" class="form-check-input" id="darkMode">
+                        </div>
+
+                        <div class="setting-option">
+                            <div>
+                                <strong>Notificações</strong>
+                                <small>Receber avisos no portal.</small>
+                            </div>
+                            <input type="checkbox" class="form-check-input" id="notificationsEnabled" checked>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="content-card mt-4">
+                    <h4>Informações do sistema</h4>
+                    <p><strong>Nome:</strong> DVF Portal Escolar</p>
+                    <p><strong>Instituição:</strong> Centro Educa Mais Domingos Vieira Filho</p>
+                    <p><strong>Versão:</strong> 1.0.0</p>
+                    <p><strong>Ano letivo:</strong> 2026</p>
+                </div>
+
+            </section>
+
+        </div>
+
+        <footer class="main-footer">
+            <p>© 2026 DVF Portal Escolar • Centro Educa Mais Domingos Vieira Filho</p>
+            <span>Educação, tecnologia e conhecimento.</span>
+        </footer>
+
+    </main>
+
+</div>
+
+<!-- MODAL DE CURSO -->
+<div class="modal fade" id="courseModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="courseModalTitle">Detalhes do curso</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="courseModalBody"></div>
+        </div>
     </div>
+</div>
 
-    <div class="profile">
-      <div class="avatar">YV</div>
-      <div><strong>Yan Victor</strong><small>Aluno • 3º ano</small></div>
-      <span class="online"></span>
+<!-- AVISO -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="systemToast" class="toast">
+        <div class="toast-header">
+            <strong class="me-auto">DVF Portal</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+        </div>
+        <div class="toast-body" id="toastMessage"></div>
     </div>
+</div>
 
-    <nav>
-      <p class="nav-label">PRINCIPAL</p>
-      <button class="nav-item active" data-page="inicio">⌂ <span>Visão geral</span></button>
-      <button class="nav-item" data-page="cursos">▣ <span>Meus cursos</span></button>
-      <button class="nav-item" data-page="materiais">▤ <span>Material didático</span></button>
-      <button class="nav-item" data-page="biblioteca">▥ <span>Biblioteca</span></button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
 
-      <p class="nav-label">ACADÊMICO</p>
-      <button class="nav-item" data-page="notas">▦ <span>Notas e boletim</span></button>
-      <button class="nav-item" data-page="horarios">◷ <span>Horários</span></button>
-      <button class="nav-item" data-page="eventos">☆ <span>Eventos escolares</span></button>
-
-      <p class="nav-label">COMUNICAÇÃO</p>
-      <button class="nav-item" data-page="professores">✉ <span>Professores</span></button>
-      <button class="nav-item" data-page="notificacoes">♧ <span>Notificações</span><span class="nav-count" id="notificationCount">3</span></button>
-
-      <p class="nav-label">OUTROS</p>
-      <button class="nav-item" data-page="lixeira">▱ <span>Lixeira</span></button>
-      <button class="nav-item" data-page="configuracoes">⚙ <span>Configurações</span></button>
-    </nav>
-
-    <div class="sidebar-bottom">
-      <div class="help-card">
-        <strong>Precisa de ajuda?</strong>
-        <p>Acesse o suporte escolar.</p>
-        <button onclick="showPage('professores')">Acessar suporte →</button>
-      </div>
-      <small>EduConnect © 2026</small>
-    </div>
-  </aside>
-
-  <main class="main">
-    <header class="topbar">
-      <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
-      <div class="breadcrumb">Portal Escolar <span>/</span> <strong id="pageName">Visão geral</strong></div>
-      <div class="top-actions">
-        <button class="icon-btn" onclick="showPage('notificacoes')" title="Notificações">♧<i></i></button>
-        <div class="top-profile">
-          <div class="avatar small">YV</div>
-          <strong>Yan Victor</strong>
-        </div>
-      </div>
-    </header>
-
-    <div class="content">
-      <section class="page active" id="inicio">
-        <div class="welcome">
-          <div>
-            <p class="eyebrow">QUARTA-FEIRA • PORTAL DO ALUNO</p>
-            <h1>Olá, Yan Victor! 👋</h1>
-            <p>Bem-vindo de volta. Confira suas atividades e acompanhe seu desempenho escolar.</p>
-          </div>
-          <div class="welcome-art">🎓</div>
-        </div>
-
-        <div class="stats-grid">
-          <div class="stat-card"><span>📚</span><p>Cursos em andamento</p><h2 id="statCourses">2</h2><small>Seus cursos ativos</small></div>
-          <div class="stat-card"><span>📈</span><p>Progresso médio</p><h2 id="statProgress">25%</h2><small>Nos cursos inscritos</small></div>
-          <div class="stat-card"><span>📝</span><p>Média escolar</p><h2>8,4</h2><small>Desempenho geral</small></div>
-          <div class="stat-card"><span>🔔</span><p>Notificações</p><h2 id="statNotifications">3</h2><small>Mensagens recentes</small></div>
-        </div>
-
-        <div class="dashboard-grid">
-          <div class="panel">
-            <div class="panel-heading"><div><h2>Meus cursos</h2><p>Continue de onde parou.</p></div><button class="text-btn" onclick="showPage('cursos')">Ver todos →</button></div>
-            <div id="homeCourses" class="course-list"></div>
-          </div>
-          <div class="panel">
-            <div class="panel-heading"><div><h2>Últimas notificações</h2><p>Fique por dentro das novidades.</p></div><button class="text-btn" onclick="showPage('notificacoes')">Ver todas →</button></div>
-            <div id="homeNotifications"></div>
-          </div>
-        </div>
-
-        <div class="panel">
-          <div class="panel-heading"><div><h2>Acesso rápido</h2><p>Encontre o que precisa.</p></div></div>
-          <div class="quick-grid">
-            <button onclick="showPage('materiais')"><span>📄</span>Materiais</button>
-            <button onclick="showPage('notas')"><span>📊</span>Boletim</button>
-            <button onclick="showPage('horarios')"><span>🕒</span>Horários</button>
-            <button onclick="showPage('eventos')"><span>🎉</span>Eventos</button>
-          </div>
-        </div>
-      </section>
-
-      <section class="page" id="cursos">
-        <div class="page-heading"><div><h1>Meus cursos</h1><p>Explore os cursos disponíveis e acompanhe seu aprendizado.</p></div></div>
-        <div class="course-banner"><div><h2>Aprenda algo novo!</h2><p>Escolha um curso e desenvolva suas habilidades.</p></div><span>🚀</span></div>
-        <h2 class="section-title">Cursos disponíveis</h2>
-        <div class="cards-grid" id="allCourses"></div>
-        <h2 class="section-title">Cursos em andamento</h2>
-        <div class="panel"><div id="enrolledCourses"></div></div>
-      </section>
-
-      <section class="page" id="materiais">
-        <div class="page-heading"><div><h1>Material didático</h1><p>Acesse atividades, trabalhos, slides e videoaulas.</p></div></div>
-        <div class="toolbar"><input id="materialSearch" placeholder="Pesquisar material..." oninput="renderMaterials()"><select id="materialFilter" onchange="renderMaterials()"><option value="Todos">Todas as categorias</option><option>Atividade</option><option>Trabalho</option><option>Slides</option><option>Videoaula</option></select></div>
-        <div class="panel"><div id="materialsList"></div></div>
-      </section>
-
-      <section class="page" id="biblioteca">
-        <div class="page-heading"><div><h1>Biblioteca</h1><p>Consulte livros, apostilas e conteúdos de estudo.</p></div></div>
-        <div class="toolbar"><input id="librarySearch" placeholder="Pesquisar na biblioteca..." oninput="renderLibrary()"></div>
-        <div class="cards-grid" id="libraryList"></div>
-      </section>
-
-      <section class="page" id="notas">
-        <div class="page-heading"><div><h1>Notas e boletim</h1><p>Acompanhe suas notas e seu desempenho escolar.</p></div><button class="primary-btn" onclick="printReport()">Imprimir boletim</button></div>
-        <div class="stats-grid">
-          <div class="stat-card"><span>📊</span><p>Média geral</p><h2>8,4</h2></div>
-          <div class="stat-card"><span>🏆</span><p>Melhor nota</p><h2>9,5</h2></div>
-          <div class="stat-card"><span>📚</span><p>Disciplinas</p><h2>6</h2></div>
-          <div class="stat-card"><span>✓</span><p>Situação</p><h2 class="approved">Aprovado</h2></div>
-        </div>
-        <div class="panel printable" id="report">
-          <h2>Boletim escolar — Yan Victor</h2>
-          <p>Turma: 3º ano • Informática</p>
-          <div class="table-wrap"><table><thead><tr><th>Disciplina</th><th>1º Bimestre</th><th>2º Bimestre</th><th>3º Bimestre</th><th>Média</th></tr></thead><tbody id="gradesTable"></tbody></table></div>
-        </div>
-      </section>
-
-      <section class="page" id="horarios">
-        <div class="page-heading"><div><h1>Horários</h1><p>Consulte sua grade semanal de aulas.</p></div></div>
-        <div class="panel"><div class="table-wrap"><table><thead><tr><th>Horário</th><th>Segunda</th><th>Terça</th><th>Quarta</th><th>Quinta</th><th>Sexta</th></tr></thead><tbody id="scheduleTable"></tbody></table></div></div>
-      </section>
-
-      <section class="page" id="eventos">
-        <div class="page-heading"><div><h1>Eventos escolares</h1><p>Confira os próximos eventos da escola.</p></div></div>
-        <div class="cards-grid" id="eventsList"></div>
-      </section>
-
-      <section class="page" id="professores">
-        <div class="page-heading"><div><h1>Professores</h1><p>Área demonstrativa de comunicação escolar.</p></div></div>
-        <div class="panel"><h2>Enviar mensagem</h2><p class="muted">Entre em contato com seus professores.</p>
-          <form id="messageForm" class="message-form">
-            <label>Professor</label><select id="teacher" required><option value="">Selecione</option><option>Professor de Informática</option><option>Professor de Matemática</option><option>Professor de Português</option><option>Coordenação</option></select>
-            <label>Assunto</label><input id="messageSubject" required placeholder="Assunto da mensagem">
-            <label>Mensagem</label><textarea id="messageText" required placeholder="Escreva sua mensagem..."></textarea>
-            <button class="primary-btn">Enviar mensagem</button>
-          </form>
-          <div id="sentMessages"></div>
-        </div>
-      </section>
-
-      <section class="page" id="notificacoes">
-        <div class="page-heading"><div><h1>Notificações</h1><p>Acompanhe avisos e atualizações da escola.</p></div><button class="secondary-btn" onclick="markAllRead()">Marcar todas como lidas</button></div>
-        <div class="panel" id="notificationsList"></div>
-      </section>
-
-      <section class="page" id="lixeira">
-        <div class="page-heading"><div><h1>Lixeira</h1><p>Materiais removidos ficam armazenados aqui.</p></div><button class="secondary-btn" onclick="clearTrash()">Esvaziar lixeira</button></div>
-        <div class="panel" id="trashList"></div>
-      </section>
-
-      <section class="page" id="configuracoes">
-        <div class="page-heading"><div><h1>Configurações</h1><p>Personalize sua experiência no portal.</p></div></div>
-        <div class="panel settings-panel">
-          <h2>Perfil do aluno</h2>
-          <div class="settings-profile"><div class="avatar large">YV</div><div><strong>Yan Victor</strong><p>Aluno • 3º ano de Informática</p></div></div>
-          <hr>
-          <h2>Aparência</h2>
-          <label class="setting-row"><span><strong>Modo escuro</strong><small>Altere a aparência do portal.</small></span><input type="checkbox" id="darkMode"></label>
-          <hr>
-          <h2>Preferências</h2>
-          <label class="setting-row"><span><strong>Notificações</strong><small>Receber avisos dentro do portal.</small></span><input type="checkbox" checked></label>
-          <label class="setting-row"><span><strong>Mostrar progresso dos cursos</strong><small>Exibir porcentagem de conclusão.</small></span><input type="checkbox" checked></label>
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <div id="toast" class="toast"></div>
-  <script src="script.js"></script>
 </body>
 </html>
