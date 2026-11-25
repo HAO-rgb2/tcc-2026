@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduConnect | Portal Escolar</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-icon">E</div>
+      <div><strong>EduConnect</strong><small>Portal Escolar</small></div>
+    </div>
+
+    <div class="profile">
+      <div class="avatar">YV</div>
+      <div><strong>Yan Victor</strong><small>Aluno • 3º ano</small></div>
+      <span class="online"></span>
+    </div>
+
+    <nav>
+      <p class="nav-label">PRINCIPAL</p>
+      <button class="nav-item active" data-page="inicio">⌂ <span>Visão geral</span></button>
+      <button class="nav-item" data-page="cursos">▣ <span>Meus cursos</span></button>
+      <button class="nav-item" data-page="materiais">▤ <span>Material didático</span></button>
+      <button class="nav-item" data-page="biblioteca">▥ <span>Biblioteca</span></button>
+
+      <p class="nav-label">ACADÊMICO</p>
+      <button class="nav-item" data-page="notas">▦ <span>Notas e boletim</span></button>
+      <button class="nav-item" data-page="horarios">◷ <span>Horários</span></button>
+      <button class="nav-item" data-page="eventos">☆ <span>Eventos escolares</span></button>
+
+      <p class="nav-label">COMUNICAÇÃO</p>
+      <button class="nav-item" data-page="professores">✉ <span>Professores</span></button>
+      <button class="nav-item" data-page="notificacoes">♧ <span>Notificações</span><span class="nav-count" id="notificationCount">3</span></button>
+
+      <p class="nav-label">OUTROS</p>
+      <button class="nav-item" data-page="lixeira">▱ <span>Lixeira</span></button>
+      <button class="nav-item" data-page="configuracoes">⚙ <span>Configurações</span></button>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="help-card">
+        <strong>Precisa de ajuda?</strong>
+        <p>Acesse o suporte escolar.</p>
+        <button onclick="showPage('professores')">Acessar suporte →</button>
+      </div>
+      <small>EduConnect © 2026</small>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+      <div class="breadcrumb">Portal Escolar <span>/</span> <strong id="pageName">Visão geral</strong></div>
+      <div class="top-actions">
+        <button class="icon-btn" onclick="showPage('notificacoes')" title="Notificações">♧<i></i></button>
+        <div class="top-profile">
+          <div class="avatar small">YV</div>
+          <strong>Yan Victor</strong>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+      <section class="page active" id="inicio">
+        <div class="welcome">
+          <div>
+            <p class="eyebrow">QUARTA-FEIRA • PORTAL DO ALUNO</p>
+            <h1>Olá, Yan Victor! 👋</h1>
+            <p>Bem-vindo de volta. Confira suas atividades e acompanhe seu desempenho escolar.</p>
+          </div>
+          <div class="welcome-art">🎓</div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card"><span>📚</span><p>Cursos em andamento</p><h2 id="statCourses">2</h2><small>Seus cursos ativos</small></div>
+          <div class="stat-card"><span>📈</span><p>Progresso médio</p><h2 id="statProgress">25%</h2><small>Nos cursos inscritos</small></div>
+          <div class="stat-card"><span>📝</span><p>Média escolar</p><h2>8,4</h2><small>Desempenho geral</small></div>
+          <div class="stat-card"><span>🔔</span><p>Notificações</p><h2 id="statNotifications">3</h2><small>Mensagens recentes</small></div>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="panel">
+            <div class="panel-heading"><div><h2>Meus cursos</h2><p>Continue de onde parou.</p></div><button class="text-btn" onclick="showPage('cursos')">Ver todos →</button></div>
+            <div id="homeCourses" class="course-list"></div>
+          </div>
+          <div class="panel">
+            <div class="panel-heading"><div><h2>Últimas notificações</h2><p>Fique por dentro das novidades.</p></div><button class="text-btn" onclick="showPage('notificacoes')">Ver todas →</button></div>
+            <div id="homeNotifications"></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-heading"><div><h2>Acesso rápido</h2><p>Encontre o que precisa.</p></div></div>
+          <div class="quick-grid">
+            <button onclick="showPage('materiais')"><span>📄</span>Materiais</button>
+            <button onclick="showPage('notas')"><span>📊</span>Boletim</button>
+            <button onclick="showPage('horarios')"><span>🕒</span>Horários</button>
+            <button onclick="showPage('eventos')"><span>🎉</span>Eventos</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="page" id="cursos">
+        <div class="page-heading"><div><h1>Meus cursos</h1><p>Explore os cursos disponíveis e acompanhe seu aprendizado.</p></div></div>
+        <div class="course-banner"><div><h2>Aprenda algo novo!</h2><p>Escolha um curso e desenvolva suas habilidades.</p></div><span>🚀</span></div>
+        <h2 class="section-title">Cursos disponíveis</h2>
+        <div class="cards-grid" id="allCourses"></div>
+        <h2 class="section-title">Cursos em andamento</h2>
+        <div class="panel"><div id="enrolledCourses"></div></div>
+      </section>
+
+      <section class="page" id="materiais">
+        <div class="page-heading"><div><h1>Material didático</h1><p>Acesse atividades, trabalhos, slides e videoaulas.</p></div></div>
+        <div class="toolbar"><input id="materialSearch" placeholder="Pesquisar material..." oninput="renderMaterials()"><select id="materialFilter" onchange="renderMaterials()"><option value="Todos">Todas as categorias</option><option>Atividade</option><option>Trabalho</option><option>Slides</option><option>Videoaula</option></select></div>
+        <div class="panel"><div id="materialsList"></div></div>
+      </section>
+
+      <section class="page" id="biblioteca">
+        <div class="page-heading"><div><h1>Biblioteca</h1><p>Consulte livros, apostilas e conteúdos de estudo.</p></div></div>
+        <div class="toolbar"><input id="librarySearch" placeholder="Pesquisar na biblioteca..." oninput="renderLibrary()"></div>
+        <div class="cards-grid" id="libraryList"></div>
+      </section>
+
+      <section class="page" id="notas">
+        <div class="page-heading"><div><h1>Notas e boletim</h1><p>Acompanhe suas notas e seu desempenho escolar.</p></div><button class="primary-btn" onclick="printReport()">Imprimir boletim</button></div>
+        <div class="stats-grid">
+          <div class="stat-card"><span>📊</span><p>Média geral</p><h2>8,4</h2></div>
+          <div class="stat-card"><span>🏆</span><p>Melhor nota</p><h2>9,5</h2></div>
+          <div class="stat-card"><span>📚</span><p>Disciplinas</p><h2>6</h2></div>
+          <div class="stat-card"><span>✓</span><p>Situação</p><h2 class="approved">Aprovado</h2></div>
+        </div>
+        <div class="panel printable" id="report">
+          <h2>Boletim escolar — Yan Victor</h2>
+          <p>Turma: 3º ano • Informática</p>
+          <div class="table-wrap"><table><thead><tr><th>Disciplina</th><th>1º Bimestre</th><th>2º Bimestre</th><th>3º Bimestre</th><th>Média</th></tr></thead><tbody id="gradesTable"></tbody></table></div>
+        </div>
+      </section>
+
+      <section class="page" id="horarios">
+        <div class="page-heading"><div><h1>Horários</h1><p>Consulte sua grade semanal de aulas.</p></div></div>
+        <div class="panel"><div class="table-wrap"><table><thead><tr><th>Horário</th><th>Segunda</th><th>Terça</th><th>Quarta</th><th>Quinta</th><th>Sexta</th></tr></thead><tbody id="scheduleTable"></tbody></table></div></div>
+      </section>
+
+      <section class="page" id="eventos">
+        <div class="page-heading"><div><h1>Eventos escolares</h1><p>Confira os próximos eventos da escola.</p></div></div>
+        <div class="cards-grid" id="eventsList"></div>
+      </section>
+
+      <section class="page" id="professores">
+        <div class="page-heading"><div><h1>Professores</h1><p>Área demonstrativa de comunicação escolar.</p></div></div>
+        <div class="panel"><h2>Enviar mensagem</h2><p class="muted">Entre em contato com seus professores.</p>
+          <form id="messageForm" class="message-form">
+            <label>Professor</label><select id="teacher" required><option value="">Selecione</option><option>Professor de Informática</option><option>Professor de Matemática</option><option>Professor de Português</option><option>Coordenação</option></select>
+            <label>Assunto</label><input id="messageSubject" required placeholder="Assunto da mensagem">
+            <label>Mensagem</label><textarea id="messageText" required placeholder="Escreva sua mensagem..."></textarea>
+            <button class="primary-btn">Enviar mensagem</button>
+          </form>
+          <div id="sentMessages"></div>
+        </div>
+      </section>
+
+      <section class="page" id="notificacoes">
+        <div class="page-heading"><div><h1>Notificações</h1><p>Acompanhe avisos e atualizações da escola.</p></div><button class="secondary-btn" onclick="markAllRead()">Marcar todas como lidas</button></div>
+        <div class="panel" id="notificationsList"></div>
+      </section>
+
+      <section class="page" id="lixeira">
+        <div class="page-heading"><div><h1>Lixeira</h1><p>Materiais removidos ficam armazenados aqui.</p></div><button class="secondary-btn" onclick="clearTrash()">Esvaziar lixeira</button></div>
+        <div class="panel" id="trashList"></div>
+      </section>
+
+      <section class="page" id="configuracoes">
+        <div class="page-heading"><div><h1>Configurações</h1><p>Personalize sua experiência no portal.</p></div></div>
+        <div class="panel settings-panel">
+          <h2>Perfil do aluno</h2>
+          <div class="settings-profile"><div class="avatar large">YV</div><div><strong>Yan Victor</strong><p>Aluno • 3º ano de Informática</p></div></div>
+          <hr>
+          <h2>Aparência</h2>
+          <label class="setting-row"><span><strong>Modo escuro</strong><small>Altere a aparência do portal.</small></span><input type="checkbox" id="darkMode"></label>
+          <hr>
+          <h2>Preferências</h2>
+          <label class="setting-row"><span><strong>Notificações</strong><small>Receber avisos dentro do portal.</small></span><input type="checkbox" checked></label>
+          <label class="setting-row"><span><strong>Mostrar progresso dos cursos</strong><small>Exibir porcentagem de conclusão.</small></span><input type="checkbox" checked></label>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
